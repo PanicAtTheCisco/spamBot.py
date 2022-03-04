@@ -1,5 +1,5 @@
 # spamBot.py
-Automated spamming tool
+Automatic spamming tool
 # Installation
 * Install the newset version of python
 * Open the downloaded folder in your terminal and use 'pip install -r requirements.txt' to install dependencies.
