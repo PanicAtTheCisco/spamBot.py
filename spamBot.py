@@ -1,5 +1,8 @@
 import pyautogui, time, os
 
+print("Online.\n")
+time.sleep(1)
+
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
     path += "\Text Files"   #<-- is the path to the directory where text files are stored for spamming
@@ -16,9 +19,6 @@ def main():
         pyautogui.typewrite(word)
         pyautogui.press("enter")
         time.sleep(1.25)     #<-- can be changed as needed
-
-print("Online.\n")
-time.sleep(1)
 
 def findFiles(path):
     return [f for f in os.listdir(path) if f.endswith('.txt')]
