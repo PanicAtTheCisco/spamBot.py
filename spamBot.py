@@ -1,19 +1,36 @@
-import pyautogui, time
+import pyautogui, time, os
 
 def main():
-    script = input("Enter text file path: ")     #<-- use '.txt' files as the program reads them easier
-    #note: you will need to copy the file path of the file to use it unless it is in the same folder as this program
+    path = os.path.dirname(os.path.realpath(__file__))
+    path += "\Text Files"   #<-- is the path to the directory where text files are stored for spamming
+
+    files = findFiles(path)         #<-- finds the files in the 'Text Files' directory
+    file = pickFile(files, path)  #<-- allows the user to select which file to use
+
     print("Running...")
 
     time.sleep(5)     #<-- gives the user time to switch to whatever application they want to use the program on and can be changed as needed
 
-    f = open(script, 'r')
+    f = open(file, 'r')
     for word in f:
         pyautogui.typewrite(word)
         pyautogui.press("enter")
         time.sleep(1.25)     #<-- can be changed as needed
 
-print("Online.")
+print("Online.\n")
 time.sleep(1)
+
+def findFiles(path):
+    return [f for f in os.listdir(path) if f.endswith('.txt')]
+    
+def pickFile(files, path):
+    i = 0
+    for file in files:
+        print(i, ": ", file, "\n")
+        i = i + 1
+
+    pick = int(input("Enter file number: "))
+    path += "\\"
+    return str(path + files[pick])
 
 main()
