@@ -2,7 +2,6 @@
 Automatic text spamming tool made to mess with some friends
 
 # Update Notes
-----------------
 ## Version 2.1
 * Added better context for file selection
 * Added invalid input checking for file selection 
