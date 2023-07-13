@@ -1,5 +1,12 @@
 # spamBot.py v2.1
 Automatic text spamming tool made to mess with some friends
+
+# Update Notes
+----------------
+## Version 2.1
+* Added better context for file selection
+* Added invalid input checking for file selection 
+
 # Installation
 * Install the newset version of python
 * Change to the directory of the downloaded folder in your terminal and use 'pip install -r requirements.txt' to install dependencies.
