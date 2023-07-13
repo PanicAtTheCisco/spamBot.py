@@ -1,8 +1,5 @@
 import pyautogui, time, os
 
-print("Online.\n")
-time.sleep(1)
-
 def main():
     path = os.path.dirname(os.path.realpath(__file__))
     path += "\Text Files"   #<-- is the path to the directory where text files are stored for spamming
@@ -26,11 +23,20 @@ def findFiles(path):
 def pickFile(files, path):
     i = 0
     for file in files:
-        print(i, ": ", file, "\n")
+        print(f"{i} : {file}\n")
         i = i + 1
 
-    pick = int(input("Enter file number: "))
+    pick = int(input(f"Enter file number (0-{i - 1}): "))
+
+    if pick > i - 1 or pick < 0:        #<-- check for valid file selection, reprompt if invalid
+        print("Invalid input.\n")
+        pickFile(files, path)
+
     path += "\\"
     return str(path + files[pick])
+
+
+print("Online.\n")
+time.sleep(1)
 
 main()
