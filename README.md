@@ -1,4 +1,4 @@
-# spamBot.py v2.0
+# spamBot.py v2.1
 Automatic text spamming tool made to mess with some friends
 # Installation
 * Install the newset version of python
