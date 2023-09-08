@@ -12,8 +12,8 @@ def main():
     time.sleep(5)     #<-- gives the user time to switch to whatever application they want to use the program on and can be changed as needed
 
     f = open(file, 'r')
-    for word in f:
-        pyautogui.typewrite(word)
+    for line in f:
+        pyautogui.typewrite(line)
         pyautogui.press("enter")
         time.sleep(1.25)     #<-- can be changed as needed
 
